@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\News;
 
@@ -19,14 +20,14 @@ class AdminController extends Controller
         return view('admin.news_list',compact('data'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        $category=Category::all();
+        $cat=array();
+        foreach($category as $key => $value){
+            $cat[$value->id]=$value->category_name;
+        }
+        return view('admin.add_news',compact('cat'));
     }
 
     /**
@@ -37,7 +38,12 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'heading'=>'required | max:255',
+            'details'=>'required',
+            'category_id'=>'required'
+        ]);
+        
     }
 
     /**

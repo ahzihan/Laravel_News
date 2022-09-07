@@ -112,7 +112,7 @@
     
 
   <script>
-     CKEDITOR.replace( 'editor1' );
+     CKEDITOR.replace( 'details' );
  </script>
 
     <!-- Bootstrap core JavaScript

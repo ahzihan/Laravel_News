@@ -2,7 +2,7 @@
           <ul class="nav navbar-nav">
             <li class="active"><a href="{{ url('/dashboard') }}">Dashboard</a></li>
             <li><a href="{{ url('/news') }}">News List</a></li>
-            <li><a href="posts.html">Posts</a></li>
+            <li><a href="{{ url('/news/create') }}">Add News</a></li>
             <li><a href="users.html">Users</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
