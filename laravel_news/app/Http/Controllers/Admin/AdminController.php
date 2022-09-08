@@ -39,11 +39,21 @@ class AdminController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'heading'=>'required | max:255',
+            'headline'=>'required | max:255',
             'details'=>'required',
             'category_id'=>'required'
         ]);
-        
+        $file=$request->file('photo');
+        $photo=time().'_'.$file->getClientOriginalName();
+        $file->move('uploads',$photo);
+        $d=array(
+            'headline'=>$request->headline,
+            'details'=>$request->details,
+            'category_id'=>$request->category_id,
+            'photo'=>$photo
+        );
+        News::create($d);
+        return redirect('/news')->with('success','News Inserted Successfully!');
     }
 
     /**

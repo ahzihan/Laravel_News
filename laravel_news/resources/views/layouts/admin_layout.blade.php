@@ -95,7 +95,7 @@
                 <h3 class="panel-title">@yield('task')</h3>
               </div>
               <div class="panel-body">
-            
+
                 @yield('main_content')
 
               </div>
@@ -109,7 +109,7 @@
       <p>Copyright ahzihan, &copy; 2022</p>
     </footer>
 
-    
+
 
   <script>
      CKEDITOR.replace( 'details' );

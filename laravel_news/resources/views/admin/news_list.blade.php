@@ -4,7 +4,7 @@
 News List
 @stop
 @section('task')
-News List
+News List {{Session::get('success')}}
 @stop
 @section('main_content')
 <table class="table table-striped table-hover">
@@ -22,15 +22,15 @@ News List
     <td>{{ $d->details }}</td>
     <td>{{ $d->created_at }}</td>
     <td>
-        <button class="btn btn-sm btn-primary">edit</button> | 
+        <button class="btn btn-sm btn-primary">edit</button> |
         <button class="btn btn-sm btn-danger">delete</button>
     </td>
   </tr>
   @empty
   <tr>
     <th class="text-center" colspan="5">No Item Found !</th>
-  </tr>     
+  </tr>
   @endforelse
-            
+
 </table>
 @stop
