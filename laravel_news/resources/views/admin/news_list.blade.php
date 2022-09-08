@@ -11,7 +11,6 @@ News List {{Session::get('success')}}
   <tr>
     <th>Title</th>
     <th>Category</th>
-    <th>Description</th>
     <th>Date</th>
     <th>Action</th>
   </tr>
@@ -19,7 +18,6 @@ News List {{Session::get('success')}}
   <tr>
     <td>{{ $d->headline }}</td>
     <td>{{ $d->category->category_name }}</td>
-    <td>{{ $d->details }}</td>
     <td>{{ $d->created_at }}</td>
     <td>
         <button class="btn btn-sm btn-primary">edit</button> |
